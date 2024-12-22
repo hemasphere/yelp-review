@@ -11,10 +11,10 @@ object DataParser {
   def aggregateZipCodes(fileName: String): List[String] =
     val jsonStringList: List[String] = 
       Source.fromInputStream(getClass.getResourceAsStream(fileName)).getLines().toList
-    jsonStringList.map(extractZipCode).map(_.postal_code)  
+    jsonStringList.flatMap(extractZipCode).map(_.postal_code)
     
-  private def extractZipCode(jsonString: String): Data =
-    decode[Data](jsonString).toOption.get
+  private def extractZipCode(jsonString: String): Option[Data] =
+    decode[Data](jsonString).toOption
 }
 
 
