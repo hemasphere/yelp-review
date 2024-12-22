@@ -1,0 +1,30 @@
+# IntelliJ IDEA
+.idea/
+.bsp
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# Build directories
+target/
+out/
+
+# Dependency directories
+lib/
+lib_managed/
+target/
+
+# Scala generated files
+*.class
+*.log
+*.tmp
+*.swp
+
+# sbt specific
+project/target/
+project/project/
+
+# IDE specific files
+*.iml
